@@ -1,0 +1,36 @@
+{
+  "name": "level_5_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mySumm.js",
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/mySumm.js",
+    "lint": "eslint . --ext .ts",
+    "dev": "esbuild-node-tsc && node build/mySumm.js | tr -d '\t'",
+    "dev2": "npm run build && node build/mySumm.js | tr -d '\t'",
+    "test": "esbuild-node-tsc && node build/bagFunction.js | tr -d '\t'",
+    "test2": "npm run build && node build/bagFunction.js | tr -d '\t'",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-format && npm run lint",       
+      "pre-push": "",         
+      "...": "..."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Ignore artifacts:
+coverage
+dist
+node_modules
+.husky
+
+
+# Ignore all HTML files:
+*.html
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+**/.git
+**/.svn
+**/.hg
